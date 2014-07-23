@@ -1,4 +1,4 @@
-function prompt-git-current-branch {
+prompt-git-current-branch() {
 	local name st color
 
 	name=`git symbolic-ref HEAD 2> /dev/null`

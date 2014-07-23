@@ -5,7 +5,7 @@ cd `dirname $0`
 echo "--- begin of ubuntuInit"
 sudo true
 
-function confirm {
+confirm() {
 	while true; do
 		printf "!!!!!! deploy $1 ? (y/N) : "
 		read input
