@@ -1,22 +1,11 @@
 #!/bin/sh
 
-echo ------ 'cd `dirname $0`'
 cd `dirname $0`
+source ../lib.sh
 
-echo ------ 'sudo echo begin setting zsh'
-sudo echo begin setting zsh
-
-echo ------ 'sudo apt-get install zsh -y'
-sudo apt-get install zsh -y
-
-echo ------ 'cp zshrc ~/.zshrc'
-cp zshrc ~/.zshrc
-
-echo ------ 'mkdir -p ~/.zsh'
-mkdir -p ~/.zsh
-
-echo ------ 'cp -r sourceFiles/* ~/.zsh'
-cp -r sourceFiles/* ~/.zsh
-
-echo ------ 'sudo chsh -s /bin/zsh `whoami`'
-sudo chsh -s /bin/zsh `whoami`
+echoAndExec sudo echo begin setting zsh
+echoAndExec sudo apt-get install zsh -y
+echoAndExec cp zshrc ~/.zshrc
+echoAndExec mkdir -p ~/.zsh
+echoAndExec cp -r sourceFiles/* ~/.zsh
+echoAndExec sudo chsh -s /bin/zsh `whoami`
