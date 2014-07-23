@@ -16,8 +16,13 @@ printf 'git config --global user.name (Your Name) : '
 read input
 git config --global user.name "$input"
 
+printf 'git config --global push.default (simple/matching) : '
+read input
+git config --global push.default "$input"
+
 echo
 
 echo ------ OK! here is your config ------
 git config --list | grep user
+git config --list | grep push 
 echo -------------------------------------

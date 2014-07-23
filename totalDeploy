@@ -7,7 +7,7 @@ cd `dirname $0`
 echo "--- begin of ubuntuInit"
 sudo echo
 
-for i in zsh; do
+for i in zsh default-editor git; do
 	confirm "!!!!!! deploy $i ?" && $i/deploy
 	sudo echo
 done
