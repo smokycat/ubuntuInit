@@ -1,0 +1,24 @@
+function prompt-git-current-branch {
+	local name st color
+
+	name=`git symbolic-ref HEAD 2> /dev/null`
+	if [[ -z $name ]]
+	then
+		return
+	fi
+	name=`basename $name`
+
+	st=`git status 2> /dev/null`
+	if [ $? -ne 0 ]
+	then
+		return
+	fi
+	if [[ -n `echo $st | grep "^nothing to"` ]]
+	then
+		color="green"
+	else
+		color="red"
+	fi
+	
+	echo "%F{$color}[$name]%f"
+}

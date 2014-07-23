@@ -7,5 +7,6 @@ zsh
 ---
 
 - install zsh
-- deploy ~/.zshrc
-- deploy ~/.zsh/* which .zshrc do `source`
+- deploy ~/.zshrc (overwrite)
+- deploy ~/.zsh/* which .zshrc do `source` (overwrite)
+- `chsh -s /bin/zsh`

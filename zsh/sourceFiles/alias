@@ -1,0 +1,10 @@
+alias ls='ls -G'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias curl='curl -A "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0)"'
+alias wget='wget --user-agent="Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.0; Trident/5.0)"'
+
+.zshrc() {
+	source ~/.zshrc
+}
