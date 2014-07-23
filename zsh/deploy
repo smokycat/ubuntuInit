@@ -3,5 +3,6 @@
 sudo echo begin setting zsh
 sudo apt-get install zsh -y
 cp .zshrc ~/.zshrc
-cp -r sourceFiles ~/.zsh
+mkdir -p ~/.zsh
+cp -r sourceFiles/* ~/.zsh
 chsh -s /bin/zsh
