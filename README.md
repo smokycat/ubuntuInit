@@ -11,5 +11,17 @@ zsh
 
 - install zsh
 - deploy ~/.zshrc (overwrite)
-- deploy ~/.zsh/* which .zshrc do `source` (overwrite)
+- deploy ~/.zsh/xxx which .zshrc do `source` (overwrite)
 - `chsh -s /bin/zsh`
+
+default-editor
+--------------
+
+- `sudo update-alternatives --config editor`
+
+git
+---
+
+- install git (I expect you have installed git, but to make sure).
+- `git config --global user.email "$input"`
+- `git config --global user.name "$input"`
