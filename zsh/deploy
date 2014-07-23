@@ -18,6 +18,5 @@ mkdir -p ~/.zsh
 echo ------ cp -r sourceFiles/* ~/.zsh
 cp -r sourceFiles/* ~/.zsh
 
-echo ------ chsh -s /bin/zsh
-chsh -s /bin/zsh
-
+echo ------ sudo chsh -s /bin/zsh `whoami`
+sudo chsh -s /bin/zsh `whoami`
