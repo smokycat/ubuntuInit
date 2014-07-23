@@ -1,8 +1,9 @@
 #!/bin/sh
 
+cd `dirname $0`
 sudo echo begin setting zsh
 sudo apt-get install zsh -y
-cp .zshrc ~/.zshrc
+cp zshrc ~/.zshrc
 mkdir -p ~/.zsh
 cp -r sourceFiles/* ~/.zsh
 chsh -s /bin/zsh
