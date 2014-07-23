@@ -1,7 +1,7 @@
 #!/bin/sh
 
 cd `dirname $0`
-source ../lib.sh
+. ../lib.sh
 
 echoAndExec sudo echo begin setting zsh
 echoAndExec sudo apt-get install zsh -y

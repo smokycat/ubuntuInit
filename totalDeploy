@@ -2,7 +2,7 @@
 
 cd `dirname $0`
 
-source lib.sh
+. lib.sh
 
 echo "--- begin of ubuntuInit"
 sudo true
