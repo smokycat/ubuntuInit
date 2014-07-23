@@ -22,3 +22,5 @@ Each deploy is also be executed as `<processname>/deploy`.
 - install git (I expect you have installed git, but to make sure).
 - `git config --global user.email "$input"`
 - `git config --global user.name "$input"`
+
+### github
