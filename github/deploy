@@ -1,0 +1,43 @@
+#!/bin/bash
+
+cd `dirname $0`
+. ../lib.sh
+
+echo !!! begin setting github
+
+echo --- Input your Github private key.
+echo --- Paste the private key "(ex. ~/.ssh/id_rsa)"
+echo --- This overwrite ~/.ssh/github.key and
+echo --- append some lines to ~/.ssh/config.
+echo --- This process exit when read empty line.
+echo
+
+githubkey=~/.ssh/github.key
+sshconfig=~/.ssh/config
+
+if [[ ! -d ~/.ssh ]]
+then
+	mkdir -m 700 ~/.ssh
+fi
+
+echo -n > $githubkey
+chmod 600 $githubkey
+
+while true; do
+	read -sp "> " input
+	echo
+	if [ "$input" = "" ]; then break; fi
+	echo $input >> $githubkey
+done
+
+if [[ ! -f $sshconfig ]]; then
+	touch $sshconfig
+	chmod 644 $sshconfig
+fi
+
+grep 'Host github.com' $sshconfig > /dev/null
+if [ $? -ne 0 ]; then
+	echo >> $sshconfig
+	echo 'Host github.com' >> $sshconfig
+	echo '  IdentityFile ~/.ssh/github.key' >> $sshconfig
+fi
