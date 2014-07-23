@@ -6,7 +6,7 @@ compinit
 setopt prompt_subst
 
 PROMPT='
-%B%(?.%F{green}^-^%f.%F{red}@_@%f) %F{blue}[%M:%/]%f`prompt-git-current-branch`%b
+%B%(?.%F{green}^-^%f.%F{red}@_@%f) %F{blue}[%f%F{red}%M%f%F{blue}:%/]%f`prompt-git-current-branch`%b
 %(!.%F{red}%B%n%b%f # .%F{green}%B%n%b%f $ )'
 
 SPROMPT="correct: %R -> %r ? "
