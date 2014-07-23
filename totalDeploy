@@ -1,0 +1,24 @@
+#!/bin/sh
+
+cd `dirname $0`
+
+echo "--- begin of ubuntuInit"
+sudo true
+
+function confirm {
+	while true; do
+		printf "!!!!!! deploy $1 ? (y/N) : "
+		read input
+		case $input in
+			"y" | "Y" ) return 0;;
+			"" | "n" | "N" ) return 1;;
+			* ) echo INPUT y OR n
+		esac
+	done
+}
+
+for i in zsh; do
+	confirm $i && $i/deploy
+done
+
+echo "--- complete"

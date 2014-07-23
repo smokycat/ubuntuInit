@@ -3,6 +3,9 @@ ubuntuInit
 
 Scripts and Dotfiles which Smokycat will deploy first on new Ubuntu server.
 
+Run `totalDeploy` to sequential deploy processes listed bellow.
+Each deploy is also be executed as `<processname>/deploy`.
+
 zsh
 ---
 
