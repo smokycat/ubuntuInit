@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd `dirname $0`
+. ../lib.sh
+
+echo !!! begin setting default-editor
+echoAndExec sudo update-alternatives --config editor

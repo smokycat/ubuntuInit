@@ -2,13 +2,14 @@
 
 cd `dirname $0`
 
-. lib.sh
+. ./lib.sh
 
 echo "--- begin of ubuntuInit"
-sudo true
+sudo echo
 
 for i in zsh; do
 	confirm "!!!!!! deploy $i ?" && $i/deploy
+	sudo echo
 done
 
 echo "--- complete"

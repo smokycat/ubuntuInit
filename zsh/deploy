@@ -3,7 +3,7 @@
 cd `dirname $0`
 . ../lib.sh
 
-echoAndExec sudo echo begin setting zsh
+echo !!! begin setting zsh
 echoAndExec sudo apt-get install zsh -y
 echoAndExec cp zshrc ~/.zshrc
 echoAndExec mkdir -p ~/.zsh

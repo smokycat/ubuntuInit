@@ -1,0 +1,23 @@
+#!/bin/sh
+
+cd `dirname $0`
+. ../lib.sh
+
+echo !!! begin setting git
+echoAndExec sudo apt-get install git -y
+
+echo
+
+printf 'git config --global user.email (you@example.com) : '
+read input
+git config --global user.email "$input"
+
+printf 'git config --global user.name (Your Name) : '
+read input
+git config --global user.name "$input"
+
+echo
+
+echo ------ OK! here is your config ------
+git config --list | grep user
+echo -------------------------------------
