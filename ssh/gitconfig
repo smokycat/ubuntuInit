@@ -1,5 +1,0 @@
-
-Host github.com
-  user git
-  IdentityFile ~/.ssh/github.key
-

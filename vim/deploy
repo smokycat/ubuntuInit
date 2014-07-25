@@ -1,0 +1,25 @@
+#!/bin/bash
+
+cd `dirname $0`
+. ../lib.sh
+
+echo !!! begin setting vim
+
+echoAndExec mkdir -p ~/.vim ~/.vim/autoload ~/.vim/bundle
+echoAndExec pushd ~/.vim/bundle
+
+for i in \
+		https://github.com/tpope/vim-pathogen \
+		https://github.com/w0ng/vim-hybrid \
+		; do
+	if [[ ! -d `basename $i` ]]; then
+		echoAndExec git clone $i
+	fi
+done
+
+if [[ ! -e ~/.vim/autoload/pathogen.vim ]]; then
+	echoAndExec ln -s ~/.vim/bundle/vim-pathogen/autoload/pathogen.vim ~/.vim/autoload/
+fi
+
+echoAndExec popd
+echoAndExec cp vimrc ~/.vimrc
