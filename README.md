@@ -33,3 +33,9 @@ Each deploy is also be executed as `<processname>/deploy`.
 
 - read the public key for ssh with silent read and append authorized_keys.
 - set `PasswordAuthentication no` for sshd (not restart daemon).
+
+### vim
+
+- install `vim-pathogen`
+- install `vim-hybrid`
+- deploy `.vimrc` (overwrite)
