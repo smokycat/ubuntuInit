@@ -5,3 +5,10 @@ let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
 
 set cindent
+set backspace=2
+
+set tabstop=2
+set expandtab
+set shiftwidth=2
+
+set clipboard=unnamed
