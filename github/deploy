@@ -37,7 +37,5 @@ fi
 
 grep 'Host github.com' $sshconfig > /dev/null
 if [ $? -ne 0 ]; then
-	echo >> $sshconfig
-	echo 'Host github.com' >> $sshconfig
-	echo '  IdentityFile ~/.ssh/github.key' >> $sshconfig
+	cat gitconfig >> $sshconfig
 fi
