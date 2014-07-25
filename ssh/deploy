@@ -1,0 +1,42 @@
+#!/bin/bash
+
+cd `dirname $0`
+. ../lib.sh
+
+echo !!! begin setting sshd
+
+echo --- Input your ssh public key.
+echo --- Paste the public key "(ex. ~/.ssh/id_rsa.pub)"
+echo --- It is appended to ~/.ssh/authorized_keys if needed.
+
+sshauth=~/.ssh/authorized_keys
+sshdconfig=/etc/ssh/sshd_config
+
+if [[ ! -d ~/.ssh ]]
+then
+	mkdir -m 700 ~/.ssh
+fi
+
+if [[ ! -f $sshauth ]]; then
+	touch $sshauth
+	chmod 600 $sshauth
+fi
+
+read -sp "PubKey > " input
+echo
+
+grep "$input" $sshauth > /dev/null
+if [ $? -ne 0 ]; then
+	echo $input >> $sshauth
+fi
+
+echo
+echo --- set PasswordAuthentication no
+echo --- This process dosen\'t reboot sshd.
+echo --- Do it yourself after check that you correctly got
+echo --- permission with RSA key.
+
+grep 'PasswordAuthentication no' $sshdconfig > /dev/null
+if [ $? -ne 0 ]; then
+	sudo sed -ie "s/#PasswordAuthentication yes/&\nPasswordAuthentication no/" $sshdconfig
+fi
